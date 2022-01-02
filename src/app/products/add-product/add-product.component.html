@@ -1,0 +1,35 @@
+<h2 mat-dialog-title>Ajouter</h2>
+<form [formGroup]="productForm" (submit)="saveProduct()">
+  <mat-dialog-content class="mat-typography">
+    <mat-form-field class="full-width">
+      <mat-label>Name</mat-label>
+      <input
+        matInput
+        placeholder="Ex. Angelica"
+        autocomplete="false"
+        formControlName="name"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <mat-label>Scientific Name</mat-label>
+      <input
+        matInput
+        placeholder="Ex. Angelica keiskei"
+        autocomplete="false"
+        formControlName="scientificName"
+      />
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Annuler</button>
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="saveProduct()"
+      [disabled]="productForm.invalid"
+    >
+      Enregistrer
+    </button>
+  </mat-dialog-actions>
+</form>

@@ -1,0 +1,10 @@
+<h2 mat-dialog-title>Confirmation</h2>
+<mat-dialog-content class="mat-typography">
+  <p>Vous voulez vraiment supprimer ce produit?</p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Annuler</button>
+  <button mat-raised-button color="warn" (click)="deleteProduct()">
+    Supprimer
+  </button>
+</mat-dialog-actions>

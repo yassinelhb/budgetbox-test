@@ -1,0 +1,13 @@
+<mat-card class="product-item">
+  <mat-card-content>
+    <mat-card-title>Name: {{ product.name }}</mat-card-title>
+    <p *ngIf="product.scientificName">Scientific Name: {{ product.scientificName }}</p>
+    <p>Group: {{ group.name }}</p>
+    <p>Sub Group: {{ subgroup.name }}</p>
+    <div class="menu-toggle">
+      <app-product-params
+        (methodTypeEvent)="onClick($event)"
+      ></app-product-params>
+    </div>
+  </mat-card-content>
+</mat-card>

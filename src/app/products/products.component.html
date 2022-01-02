@@ -1,0 +1,38 @@
+<div class="page-content">
+  <div class="page-header">
+    <h1>Produits</h1>
+    <button mat-raised-button color="primary" (click)="addProduct()">
+      Ajouter
+    </button>
+  </div>
+  <div class="search-content">
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Rechercher..."
+        autocomplete="false"
+        [(ngModel)]="search"
+      />
+    </mat-form-field>
+    <button mat-raised-button (click)="onSearchClick()">Rechercher</button>
+  </div>
+  <div class="product-list">
+    <mat-spinner *ngIf="loading; else data" [diameter]="20"></mat-spinner>
+    <ng-template #data>
+      <app-product-item
+        *ngFor="let product of products"
+        [product]="product"
+        [group]="getProductGroup(product.groupId)"
+        [subgroup]="getProductSubGroup(product.subGroupId)"
+        (deleteEvent)="deleteProduct($event)"
+      ></app-product-item>
+    </ng-template>
+  </div>
+  <mat-paginator
+    [length]="totalItems"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="pageSizeOptions"
+    (page)="onPageChange($event)"
+  >
+  </mat-paginator>
+</div>
