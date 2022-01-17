@@ -2,7 +2,6 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Product } from 'src/app/models/product.model';
 import { ProductGroup } from 'src/app/models/productGroup.model';
-import { ProductService } from 'src/app/services/product.service';
 import { AddProductComponent } from '../add-product/add-product.component';
 import { DeleteProductComponent } from '../delete-product/delete-product.component';
 import { methodType } from './product-params/product-params.component';

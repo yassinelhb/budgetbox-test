@@ -1,15 +1,6 @@
 @import "../../../variables.scss";
 
 .product-item {
-  border: 2px solid $green;
-  background: $gray;
-  transition: all 0.45s;
-
-  &:hover {
-    border-color: $greenDark;
-    background: $white;
-  }
-
   .menu-toggle {
     position: absolute;
     right: 15px;
@@ -22,5 +13,16 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     word-wrap: break-word;
+  }
+
+  @media (max-width: $media-mobile) {
+    border: 2px solid $green;
+    background: $gray;
+    transition: all 0.45s;
+
+    &:hover {
+      border-color: $greenDark;
+      background: $white;
+    }
   }
 }
